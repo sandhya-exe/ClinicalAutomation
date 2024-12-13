@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2d8f1e7b8734f25bd97890edfb262a7" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="clinicalSysdbModel.chemist" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicalSysdbModel.patient" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicalSysdbModel.physician" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicalSysdbModel.product" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicalSysdbModel.supplier" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicalSysdbModel.User" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicalSysdbModel.Appointment" Width="1.5" PointX="7" PointY="0.75" />
+        <AssociationConnector Association="clinicalSysdbModel.FK__Appointme__Patie__5CD6CB2B" />
+        <AssociationConnector Association="clinicalSysdbModel.FK__Appointme__Physi__5DCAEF64" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

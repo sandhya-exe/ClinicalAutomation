@@ -1,0 +1,184 @@
+﻿@*@model ClinicalAutomation.Models.patient*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+<!-- Header Section -->
+<div class="css-r9rac5">
+    <h1 class="css-u7ofnn" style="padding-bottom: 0.75rem;">
+        <div class="css-1p7dwjb">Get started with ClinicX</div>
+        <div class="css-1dxnm8j">
+            <span>Get </span><span>started </span><span>with </span><span>Cliniko </span>
+        </div>
+    </h1>
+    <p class="css-7yqz5e">
+        <strong>ClinicX is free for the first 30 days.</strong> There’s no payment upfront and we’ll only ask for credit card details if you wish to continue using Cliniko after the 30&nbsp;days.
+    </p>
+</div>
+
+<!--<!--<!-- Registration Form Section --><!----><!---->
+<div class="bg-cover bg-center flex items-center justify-center width-70px h-100" style="background-image: url('/Content//images//bg1.jpg');">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h1 class="text-2xl font-bold text-center text-purple-900 mb-4" style="font-family: 'Nunito', sans-serif;">
+            Register
+        </h1>
+        <p class="text-center text-gray-700 mb-6" style="font-family: 'Open Sans', sans-serif;">
+            Create your ClinicX account.
+        </p>
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+            <div class="form-group mb-4">
+                @Html.Label("Name", null, new { @class = "block text-gray-700 mb-2", style = "font-family: 'Open Sans', sans-serif;" })
+                @Html.TextBox("name", null, new { @class = "form-input w-full p-2 border border-gray-300 rounded" })
+                @Html.ValidationMessage("name", null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.Label("Date of Birth", null, new { @class = "block text-gray-700 mb-2\", style = \"font-family: 'Open Sans', sans-serif;" })
+                @Html.TextBox("DOB", "{0:yyyy-MM-dd}", new { @class = "form-input w-full p-2 border border-gray-300 rounded ", type = "date" })
+                @Html.ValidationMessage("DOB", null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.Label("Age", null, new { @class = "block text-gray-700 mb-2\", style = \"font-family: 'Open Sans', sans-serif;" })
+                @Html.TextBox("age", null, new { @class = "form-input w-full p-2 border border-gray-300 rounded", type = "number" })
+                @Html.ValidationMessage("age", null, new { @class = " text-danger" })
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.Label("Contact", null, new { @class = "block text-gray-700 mb-2\", style = \"font-family: 'Open Sans', sans-serif;" })
+                @Html.TextBox("contact", null, new { @class = "form-input w-full p-2 border border-gray-300 rounded" })
+                @Html.ValidationMessage("contact", null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.Label("Email", null, new { @class = "block text-gray-700 mb-2\", style = \"font-family: 'Open Sans', sans-serif;" })
+                @Html.TextBox("email", null, new { @class = "form-input w-full p-2 border border-gray-300 rounded" })
+                @Html.ValidationMessage("email", null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.Label("Address", null, new { @class = "block text-gray-700 mb-2\", style = \"font-family: 'Open Sans', sans-serif;" })
+                @Html.TextBox("address", null, new { @class = "form-input w-full p-2 border border-gray-300 rounded" })
+                @Html.ValidationMessage("address", null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.Label("Gender", null, new { @class = "block text-gray-700 mb-2\", style = \"font-family: 'Open Sans', sans-serif;-label" })
+                @Html.DropDownList("gender", new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "Male", Value = "MALE" },
+                    new SelectListItem { Text = "Female", Value = "FEMALE" },
+                    new SelectListItem { Text = "Other", Value = "OTHER" }
+                }, "Select Gender", new { @class = "form-input w-full p-2 border border-gray-300 rounded" })
+                @Html.ValidationMessage("gender", null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="w-full bg-red-600 text-white py-2 rounded" style="font-family: 'Open Sans', sans-serif;">Register</button>
+            </div>
+        }
+    </div>
+
+    <style>
+        .css-r9rac5 {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 78rem;
+            padding-top: 4.5rem;
+            padding-bottom: 4.5rem;
+        }
+
+        .css-u7ofnn {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .css-1p7dwjb {
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .css-1dxnm8j {
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+            .css-1dxnm8j span {
+                margin: 0 0.25rem;
+            }
+
+        .css-7yqz5e {
+            text-align: center;
+            font-size: 1rem;
+            color: #555;
+            margin-top: 1rem;
+        }
+
+        /* Adjusting the width of the registration form */
+        /* Ensure the form is centered */
+        .bg-cover {
+            display: flex;
+            align-items: center; /* Vertical centering */
+            justify-content: center; /* Horizontal centering */
+            min-height: 100vh; /* Full viewport height */
+            padding: 1rem; /* Avoid elements sticking to edges on smaller screens */
+            .bg-white
+
+        {
+            max-width: 40rem; /* Increased width */
+            padding-left: 50px;
+            padding: 2rem; /* Ensure consistent padding */
+            margin-top: 3rem; /* Margin from top */
+            margin-bottom: 3rem; /* Margin from bottom */
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem; /* Spacing between inputs */
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem; /* Increased input size */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem; /* Adjusted font size for better visibility */
+        }
+
+        .text-danger {
+            font-size: 0.875rem;
+            color: #e53e3e;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .bg-red-600 {
+            background-color: #e53e3e;
+        }
+
+            .bg-red-600:hover {
+                background-color: #c53030;
+            }
+    </style>
+
+
+

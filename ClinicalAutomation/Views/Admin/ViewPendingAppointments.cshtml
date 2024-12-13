@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ClinicalAutomation.Models.Appointment>
+
+
+
+@{
+    ViewBag.Title = "ViewPendingAppointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewPendingAppointments</h2>
+
+
+@* Display success or error message *@
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+@* Debugging to check if ViewBag.Physicians contains the correct data *@
+
+@foreach (var appointment in Model)
+{
+    <p>Appointment ID: @appointment.AppointmentID, Patient: @(appointment.patient?.name ?? "Not Loaded")</p>
+}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Criticality</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Preferred Appointment Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+            <tr>
+                @*<td>@(appointment.patient != null ? appointment.patient.name : "Unknown Patient")</td>*@
+                @*<td>@(appointment.patient?.name ?? "Unknown Patient")</td>*@
+                <td> @appointment.patient.name</td>
+                <td>@appointment.Criticality</td>
+                <td>@appointment.Reason</td>
+                <td>@appointment.Status</td>
+                <td>@appointment.ScheduleDateTime</td>
+                <td>
+                    @using (Html.BeginForm("ConfirmAppointment", "Admin", FormMethod.Post))
+
+
+                    {
+                        @Html.Hidden("appointmentId", appointment.AppointmentID)
+                        <div class="form-group">
+                            <label for="physicianId">Select Physician</label>
+                            @Html.DropDownList("physicianId", new SelectList(ViewBag.Physicians, "physicianID", "name"), "Select Physician", new { @class = "form-control" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDate">Select Appointment Date</label>
+                            @Html.TextBox("appointmentDate", null, new { @class = "form-control", type = "date" })
+                        </div>
+
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-success">Confirm Appointment</button>
+
+
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

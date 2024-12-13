@@ -1,0 +1,231 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+
+
+<div class="card">
+    <img src="https://via.placeholder.com/300x150" alt="Card 1">
+    <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <a href="@Url.Action("PhysicianIndex", "Admin")" class="btn btn-primary">Physician</a>
+    </div>
+</div>
+
+
+
+@*--------------------------------------------------------------------------------------------------------*@
+
+<script src="https://cdn.tailwindcss.com">
+</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+<body class="bg-gray-100 font-sans antialiased">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-md">
+            <div class="p-6">
+                <div class="text-2xl font-bold text-blue-600">
+                    Finance
+                </div>
+            </div>
+            <nav class="mt-6">
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-tachometer-alt mr-3">
+                    </i>
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-layer-group mr-3">
+                    </i>
+                    <span>
+                        Classic
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-th-large mr-3">
+                    </i>
+                    <span>
+                        Minimal
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-file-alt mr-3">
+                    </i>
+                    <span>
+                        Pages
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-cogs mr-3">
+                    </i>
+                    <span>
+                        Applications
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-puzzle-piece mr-3">
+                    </i>
+                    <span>
+                        UI Component
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-th mr-3">
+                    </i>
+                    <span>
+                        Widgets
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-edit mr-3">
+                    </i>
+                    <span>
+                        Forms
+                    </span>
+                </a>
+                <a class="flex items-center p-2 text-gray-700 hover:bg-gray-200" href="#">
+                    <i class="fas fa-chart-bar mr-3">
+                    </i>
+                    <span>
+                        Charts
+                    </span>
+                </a>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div class="relative w-1/2">
+                    <input class="w-full p-2 pl-10 bg-white border rounded shadow-sm focus:outline-none focus:ring" placeholder="Search here..." type="text" />
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400">
+                    </i>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-bell text-gray-400">
+                    </i>
+                    <i class="fas fa-envelope text-gray-400">
+                    </i>
+                    <img alt="User profile picture" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/1KRsdMQzyaobM9OgWJb92Se7GwkxQljX8uFlSwOauYBlzy7JA.jpg" width="40" />
+                </div>
+            </div>
+            <!-- Dashboard Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div class="p-6 bg-blue-500 text-white rounded-lg shadow-md">
+                    <div class="text-lg">
+                        Total Income
+                    </div>
+                    <div class="text-2xl font-bold">
+                        $ 579,000
+                    </div>
+                    <div>
+                        Saved 25%
+                    </div>
+                </div>
+                <div class="p-6 bg-blue-300 text-white rounded-lg shadow-md">
+                    <div class="text-lg">
+                        Total Expenses
+                    </div>
+                    <div class="text-2xl font-bold">
+                        $ 79,000
+                    </div>
+                    <div>
+                        Saved 25%
+                    </div>
+                </div>
+                <div class="p-6 bg-purple-500 text-white rounded-lg shadow-md">
+                    <div class="text-lg">
+                        Cash on Hand
+                    </div>
+                    <div class="text-2xl font-bold">
+                        $ 92,000
+                    </div>
+                    <div>
+                        Saved 25%
+                    </div>
+                </div>
+                <div class="p-6 bg-green-400 text-white rounded-lg shadow-md">
+                    <div class="text-lg">
+                        Net Profit Margin
+                    </div>
+                    <div class="text-2xl font-bold">
+                        $ 179,000
+                    </div>
+                    <div>
+                        Saved 65%
+                    </div>
+                </div>
+            </div>
+            <!-- Charts and Reports -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 p-6 bg-white rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="text-lg font-bold">
+                            AP and AR Balance
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-4 py-2 bg-gray-200 rounded">
+                                Monthly
+                            </button>
+                            <button class="px-4 py-2 bg-gray-200 rounded">
+                                Last Year
+                            </button>
+                        </div>
+                    </div>
+                    <img alt="Bar chart showing AP and AR balance over time" height="300" src="https://storage.googleapis.com/a1aa/image/z4bEMVpp0yJzOhCeG08UfAafMrwkf9i6mz0VTc8zrpRjcWeeE.jpg" width="600" />
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="text-lg font-bold">
+                                % of Income Budget
+                            </div>
+                            <div class="text-2xl font-bold">
+                                67%
+                            </div>
+                        </div>
+                        <img alt="Circular chart showing 67% of income budget used" height="100" src="https://storage.googleapis.com/a1aa/image/wxzSAWLIej0gXyxKtDOpPJ6EPVp2vrPLqKoB9X5FjCxlzy7JA.jpg" width="100" />
+                        <div class="text-center mt-4">
+                            <a class="text-blue-500" href="#">
+                                View Full Report
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="text-lg font-bold">
+                                % of Expenses Budget
+                            </div>
+                            <div class="text-2xl font-bold">
+                                48%
+                            </div>
+                        </div>
+                        <img alt="Circular chart showing 48% of expenses budget used" height="100" src="https://storage.googleapis.com/a1aa/image/RXQnmuPXXSo4MRzRKkJzjv1hAyPS99xUhtE0q6mcIx1xZ59E.jpg" width="100" />
+                        <div class="text-center mt-4">
+                            <a class="text-blue-500" href="#">
+                                View Full Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

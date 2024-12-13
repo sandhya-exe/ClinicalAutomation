@@ -1,0 +1,29 @@
+﻿
+@model ClinicalAutomation.Models.Appointment
+
+@{
+    ViewBag.Title = "RequestAppointment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Request Appointment</h2>
+@using (Html.BeginForm("RequestAppointment", "Patient", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <label>Criticality</label>
+        @Html.DropDownListFor(m => m.Criticality,
+            new SelectList(new[] { "LOW", "MED", "HIGH" }))
+    </div>
+    <div>
+        <label>Reason</label>
+        @Html.TextAreaFor(m => m.Reason, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Schedule Date & Time</label>
+        @Html.TextBoxFor(m => m.ScheduleDateTime,
+            new { type = "datetime-local", @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

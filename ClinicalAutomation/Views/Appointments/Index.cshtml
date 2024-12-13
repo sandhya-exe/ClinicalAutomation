@@ -1,0 +1,191 @@
+﻿@model IEnumerable<ClinicalAutomation.Models.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Appointment Index / All Appointments  </h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Appointment Date</th>
+            <th>Criticality</th>
+            <th>Reason</th>
+            <th>Patient</th>
+            <th>Status</th>
+            <th>Physician</th>
+            <th>Schedule Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+            <tr>
+                <td>@appointment.AppointmentDate</td>
+                <td>@appointment.Criticality</td>
+                <td>@appointment.Reason</td>
+                <td>@appointment.patient?.name</td>
+                <td>@appointment.Status</td>
+                <td>@appointment.physician?.name</td>
+                <td>@appointment.ScheduleDateTime</td>
+
+                <td>
+                    @Html.ActionLink("Edit", "AppointmentEdit", new { id = appointment.AppointmentID }) |
+                    @Html.ActionLink("Details", "AppointmentDetails", new { id = appointment.AppointmentID }) |
+                    @Html.ActionLink("Delete", "AppointmentDelete", new { id = appointment.AppointmentID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div>
+    <h3>Pending Appointments</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Appointment Date</th>
+                <th>Criticality</th>
+                <th>Reason</th>
+                <th>Patient</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Where(a => a.Status == "Pending"))
+            {
+                <tr>
+                    <td>@item.AppointmentDate</td>
+                    <td>@item.Criticality</td>
+                    <td>@item.Reason</td>
+                    <td>@item.patient?.name</td>
+                    <td>@item.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Confirmed Appointments</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Appointment Date</th>
+                <th>Criticality</th>
+                <th>Reason</th>
+                <th>Patient</th>
+                <th>Physician</th>
+                <th>Schedule Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Where(a => a.Status == "Confirmed"))
+            {
+                <tr>
+                    <td>@item.AppointmentDate</td>
+                    <td>@item.Criticality</td>
+                    <td>@item.Reason</td>
+                    <td>@item.patient?.name</td>
+                    <td>@item.physician?.name</td>
+                    <td>@item.ScheduleDateTime</td>
+                    <td>@item.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>*@
+
+
+@*<p>
+        @Html.ActionLink("Create New", "AppointmentCreate")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Criticality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScheduleDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.patient.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.physician.name)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Criticality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduleDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.patient.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.physician.name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "AppointmentEdit", new { id=item.AppointmentID }) |
+                @Html.ActionLink("Details", "AppointmentDetails", new { id=item.AppointmentID }) |
+                @Html.ActionLink("Delete", "AppointmentDelete", new { id=item.AppointmentID })
+            </td>
+        </tr>
+    }
+
+    </table>*@

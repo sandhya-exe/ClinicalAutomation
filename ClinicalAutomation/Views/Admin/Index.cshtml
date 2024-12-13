@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin Index</h2>
+
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <a href="@Url.Action("PhysicianIndex", "Admin")" class="btn btn-primary">Physician</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <a href="@Url.Action("PatientIndex", "Admin")" class="btn btn-primary">Patient</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <a href="@Url.Action("ChemistIndex", "Admin")" class="btn btn-primary">Chemist</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <a href="@Url.Action("SupplierIndex", "Admin")" class="btn btn-primary">Supplier</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <a href="@Url.Action("ProductIndex", "Admin")" class="btn btn-primary">Product</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <a href="@Url.Action("Index", "Appointments")" class="btn btn-primary">All Appointments(Pending or confirmed)</a>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Pending Appointments</h5>
+        <a href="@Url.Action("ViewPendingAppointments", "Admin")" class="btn btn-primary">View Pending Appointments</a>
+    </div>
+</div>

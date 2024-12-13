@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "currentUsr";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>currentUsr</h2>
+
+
+@{
+    ViewBag.Title = "Home Page";
+}*@
+
+<h2>Welcome, @ViewBag.CurrentUser!</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>You are logged in as: @User.Identity.Name</p>
+}
+else
+{
+    <p>Welcome, Guest! Please <a href="@Url.Action("Login", "Account")">Login</a>.</p>
+}

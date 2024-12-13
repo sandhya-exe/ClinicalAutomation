@@ -1,0 +1,92 @@
+﻿
+@model ClinicalAutomation.Models.Appointment
+
+
+@*@{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+
+
+
+@{
+    ViewBag.Title = "Patient Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome to the Patient Dashboard</h2>
+
+
+<!-- Display success message if available in TempData -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+
+
+<!-- Button to show Appointment Request Form -->
+<button id="requestAppointmentBtn" class="btn btn-primary btn-lg">Request Appointment</button>
+
+<!-- Hidden Appointment Request Form -->
+<div id="appointmentForm" style="display:none;">
+    @using (Html.BeginForm("RequestAppointment", "Patient", FormMethod.Post, new { id = "appointmentRequestForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label for="Criticality">Criticality</label>
+            @Html.DropDownListFor(m => m.Criticality, new SelectList(new[] { "LOW", "MED", "HIGH" }), "-Select Criticality-", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label for="Reason">Reason for Appointment</label>
+            @Html.TextAreaFor(m => m.Reason, new { @class = "form-control", rows = 4 })
+        </div>
+
+        <div class="form-group">
+            <label for="ScheduleDateTime">Preferred Schedule Date & Time</label>
+            @Html.TextBoxFor(m => m.ScheduleDateTime, new { type = "datetime-local", @class = "form-control" })
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Appointment Request</button>
+    }
+</div>
+
+<!-- Success message display -->
+<div id="successMessage" style="display:none;" class="alert alert-success">
+    Your appointment request has been successfully submitted and is pending approval!
+</div>
+
+
+
+
+
+
+<!-- JavaScript to toggle form visibility -->
+<script type="text/javascript">
+    // Get the button and form elements
+    var requestAppointmentBtn = document.getElementById("requestAppointmentBtn");
+    var appointmentForm = document.getElementById("appointmentForm");
+    var successMessage = document.getElementById("successMessage");
+
+    // Toggle form visibility when the button is clicked
+    requestAppointmentBtn.onclick = function () {
+        // Toggle the visibility of the form
+        if (appointmentForm.style.display === "none") {
+            appointmentForm.style.display = "block";
+        } else {
+            appointmentForm.style.display = "none";
+        }
+
+        // Hide success message if form is being shown again
+        successMessage.style.display = "none";
+    };
+
+    // Check if the appointment request is submitted successfully
+    // This is just a simple example to display the success message.
+    // You'll probably want to use a callback after form submission to show the success message.
+    @* You can add a success handler in your controller to handle this part *@
+</script>

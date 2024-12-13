@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>physician Index</h2>
+
+@{
+    ClinicalAutomation.Models.CurrentUserModel usr = Session["CurrentUser"] as ClinicalAutomation.Models.CurrentUserModel;
+
+}
+<h1>  @usr.UserName</h1>

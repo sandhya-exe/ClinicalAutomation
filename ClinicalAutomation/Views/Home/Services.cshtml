@@ -1,0 +1,212 @@
+﻿
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<h2>Services</h2>
+<div class="site-inner" role="main" itemprop="mainContentOfPage">
+    <section id="flexible-section-repeater">
+        <section class="product-features-section page-flexible-section color">
+            <div class="wrap">
+                <div class="upper-content has-text">
+                    <div class="upper-content-left">
+                        <h2 class="section-title">Our Products and Services</h2>
+                        <h5 class="section-subtitle">Patient-First Solutions</h5>
+                    </div>
+                    <div class="upper-content-right">
+                        <p><strong>Benchmark Solutions, <a href="https://www.benchmarksystems.com/blog/benchmark-systems-acquired-by-harris-healthcare-is-now-operating-as-benchmark-solutions/" target="_blank" rel="noopener">formerly Benchmark Systems</a>, offers RCM, PM, and EHR software and services designed to save providers time while prioritizing the patient experience.</strong> Benchmark Solutions' services come together to form a comprehensive electronic toolset that can streamline daily internal operations and increase revenue earned all while improving the overall patient experience.</p>
+                    </div>
+                </div>
+
+                <!-- Cards Section -->
+                <div class="feature-grid">
+                    <!-- Benchmark RCM Card -->
+                    <a class="feature tac" href="@Url.Action("Home") target="_blank">
+                        <div class="inner-feature">
+                            <div class="feature-image-wrap">
+                                <i class="fas fa-credit-card feature-icon"></i>
+                            </div>
+                            <h5 class="feature-title">Benchmark RCM</h5>
+                        </div>
+                        <div class="feature-info">
+                            <h5 class="feature-info-title">Benchmark RCM</h5>
+                            <p class="feature-text">Benchmark RCM can handle all aspects of revenue cycle management to help providers focus on patients, not dollars.</p>
+                            <span class="feature-button">View Full Feature</span>
+                        </div>
+                    </a>
+
+                    <!-- Benchmark PM Card -->
+                    <a class="feature tac" href="@Url.Action("Home", "Home") target="_blank">
+                        <div class="inner-feature">
+                            <div class="feature-image-wrap">
+                                <i class="fas fa-user-md feature-icon"></i>
+                            </div>
+                            <h5 class="feature-title">Benchmark PM</h5>
+                        </div>
+                        <div class="feature-info">
+                            <h5 class="feature-info-title">Benchmark PM</h5>
+                            <p class="feature-text">Automate task management from scheduling to accounting and improve your practice's operational efficiency.</p>
+                            <span class="feature-button">View Full Feature</span>
+                        </div>
+                    </a>
+
+                    <!-- Benchmark EHR Card -->
+                    <a class="feature tac" href="@Url.Action("Home", "Home") target="_blank">
+                        <div class="inner-feature">
+                            <div class="feature-image-wrap">
+                                <i class="fas fa-hospital-alt feature-icon"></i>
+                            </div>
+                            <h5 class="feature-title">Benchmark EHR</h5>
+                        </div>
+                        <div class="feature-info">
+                            <h5 class="feature-info-title">Benchmark EHR</h5>
+                            <p class="feature-text">A cloud-based HIPAA-compliant patient portal, allowing secure communication and improving patient care.</p>
+                            <span class="feature-button">View Full Feature</span>
+                        </div>
+                    </a>
+
+                    <!-- Benchmark ProTech Card -->
+                    <a class="feature tac" href="@Url.Action("Home", "Home") target="_blank">
+                        <div class="inner-feature">
+                            <div class="feature-image-wrap">
+                                <i class="fas fa-desktop feature-icon"></i>
+                            </div>
+                            <h5 class="feature-title">Benchmark ProTech</h5>
+                        </div>
+                        <div class="feature-info">
+                            <h5 class="feature-info-title">Benchmark ProTech</h5>
+                            <p class="feature-text">Provides IT solutions and support, acting as your practice’s dedicated IT team.</p>
+                            <span class="feature-button">View Full Feature</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+
+<style>
+
+    /* General Section Styling */
+    .product-features-section {
+        background-color: #f5f5f5;
+        padding: 40px;
+    }
+
+    .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .upper-content {
+        height : 60vh;
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .upper-content-left {
+        flex: 1 1 33%;
+        padding-right: 20px;
+    }
+
+    .upper-content-right {
+        flex: 2 1 66%;
+    }
+
+    .upper-content .section-title {
+        font-size: 2rem;
+        color: #003366;
+    }
+
+    .upper-content .section-subtitle {
+        font-size: 1.3rem;
+        color: #00b4cc;
+    }
+
+    .section-text p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .feature-grid {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+        justify-content: space-between;
+    }
+
+    .feature {
+        flex: 1;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+    }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+    .inner-feature {
+        padding: 20px;
+    }
+
+    .feature-image-wrap {
+        font-size: 3rem;
+        color: #00b4cc;
+        margin-bottom: 15px;
+    }
+
+    .feature-title {
+        font-size: 1.2rem;
+        color: #003366;
+        font-weight: bold;
+    }
+
+    .feature-info {
+        background-color: #f7f7f7;
+        padding: 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .feature-info-title {
+        font-size: 1.1rem;
+        color: #003366;
+    }
+
+    .feature-text {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .feature-button {
+        display: inline-block;
+        background-color: #00b4cc;
+        color: white;
+        padding: 8px 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+        .feature-button:hover {
+            background-color: #007a87;
+        }
+
+    .feature-icon {
+        font-size: 50px;
+    }
+</style>
